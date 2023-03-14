@@ -1,5 +1,6 @@
-package com.omoluabi.paystackintegrate.model;
+package com.omoluabi.paystackintegrate.model.domain;
 
+import com.omoluabi.paystackintegrate.model.enums.PricingPlanType;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -22,8 +23,8 @@ public class PaymentPaystack {
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "member_id")
-    private Member member;
+    @JoinColumn(name = "user_id")
+    private AppUser user;
 
     @Column(name = "reference")
     private String reference;
